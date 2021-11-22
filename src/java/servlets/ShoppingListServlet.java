@@ -26,7 +26,7 @@ public class ShoppingListServlet extends HttpServlet {
         }
         
          if (session.getAttribute("username") != null) {
-            getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/list.jsp").forward(request, response);
             return;
         }
         
@@ -58,7 +58,7 @@ public class ShoppingListServlet extends HttpServlet {
                     itemList.add(request.getParameter("item"));
                 }
                 session.setAttribute("itemList", itemList);
-                getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/WEB-INF/list.jsp").forward(request, response);
                 return;
             }
             
@@ -67,7 +67,7 @@ public class ShoppingListServlet extends HttpServlet {
                     itemList.remove(request.getParameter("item"));
                 }
                 session.setAttribute("itemList", itemList);
-                getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/WEB-INF/list.jsp").forward(request, response);
                 return;
             }
         }
